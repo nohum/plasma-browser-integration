@@ -21,7 +21,7 @@
     THE SOFTWARE.
 */
 
-#include <QApplication>
+#include <QCoreApplication>
 #include <QDBusConnection>
 #include <QDebug>
 
@@ -62,9 +62,7 @@ int main(int argc, char *argv[])
     // (it's a "regular X app" after all) and then the browser will complain
     qunsetenv("SESSION_MANAGER");
 
-    QApplication a(argc, argv);
-    // otherwise will close when download job finishes
-    a.setQuitOnLastWindowClosed(false);
+    QCoreApplication a(argc, argv);
     // applicationName etc will be set in Settings once the browser identifies to us
 
     // NOTE if you add a new plugin here, make sure to adjust the
